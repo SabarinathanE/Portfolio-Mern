@@ -19,6 +19,7 @@ function App() {
     (state) => state.root
   );
   const dispatch = useDispatch();
+  axios.defaults.withCredentials = true;
   const getPortfolioData = async () => {
     try {
       dispatch(ShowLoading());
