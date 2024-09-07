@@ -8,12 +8,21 @@ var cors = require('cors')
 const portfolioRoute = require("./routes/portfolioRoute");
 
 app.use(express.json());
-app.use(cors(
-  {
-    origin: "https://portfolio-mern-client.vercel.app",
-    credentials: true
-  }
-))
+
+const allowedOrigins = ['https://portfolio-mern-client.vercel.app","https://portfolio-mern-client.vercel.app/admin'];
+
+app.use(cors({
+  origin: function(origin, callback) {
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+}));
+
+
 app.use("/api/portfolio", portfolioRoute);
 
 const port = process.env.PORT || 5000;
