@@ -10,8 +10,7 @@ const portfolioRoute = require("./routes/portfolioRoute");
 app.use(express.json());
 app.use(cors(
   {
-    origin: ["https://portfolio-mern-client.vercel.app"],
-    methods: ["POST", "GET"],
+    origin: "http://localhost:3000",
     credentials: true
   }
 ))
