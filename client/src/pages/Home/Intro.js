@@ -18,7 +18,7 @@ function Intro() {
       </h1>
       <p className="text-white w-2/3">{description || ""}</p>
       <button className="border-2 border-tertiary text-tertiary px-10 py-3 rounded">
-      <a href="https://drive.google.com/file/d/1cJ4JblUZtqjMvLltt7oaeoZtlhmq_4x0/view?usp=drive_link" target="_blank">Resume</a>
+      <a href="https://drive.google.com/file/d/1S2zrLnGvhQ89zUOZYQZje_118D9aDSg2/view" target="_blank">Resume</a>
       </button>
     </div>
   );
